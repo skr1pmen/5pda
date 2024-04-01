@@ -11,7 +11,7 @@ class UserForm extends Model
 {
     public $login;
     public $password;
-    public $_user;
+    public $_user = false;
 
     public function rules()
     {
@@ -37,7 +37,7 @@ class UserForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = Users::findUserByLogin($this->login);
+            $this->_user = UsersRepository::getUserByLogin($this->login);
         }
         return $this->_user;
     }
