@@ -22,7 +22,7 @@ class UsersRepository
     {
         $user = new Users();
         $user->login = $login;
-        $user->password = $password;
+        $user->password = password_hash($password, PASSWORD_DEFAULT);
         $user->save();
         return $user->id;
     }

@@ -1,9 +1,11 @@
 <?php
 
 /** @var yii\web\View $this */
+
 /** @var string $content */
 
 use app\assets\AppAsset;
+use yii\helpers\Html;
 
 AppAsset::register($this);
 
@@ -15,39 +17,49 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-    <head>
-        <title><?= $this->title ?></title>
-        <?php $this->head() ?>
-    </head>
-    <body>
-        <?php $this->beginBody() ?>
+<head>
+    <title><?= $this->title ?></title>
+    <?php $this->head() ?>
+</head>
+<body>
+<?php $this->beginBody() ?>
 
-        <header>
-            <div class="container">
-                <a href="./" class="logo">5pda</a>
-                <nav>
-                    <ul>
-                        <li><a href="#">Случайная тема</a></li>
-                        <li><a href="/user/login">Войти</a></li>
-                        <li><a class="btn" href="/user/registration">Регистрация</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+<header>
+    <div class="container">
+        <a href="./" class="logo">5pda</a>
+        <nav>
+            <ul>
+                <li><a href="#">Случайная тема</a></li>
+                <?php if (Yii::$app->user->isGuest): ?>
+                    <li><a href="/user/login">Войти</a></li>
+                    <li><a class="btn" href="/user/registration">Регистрация</a></li>
+                <?php else: ?>
+                    <?= '<li>' .
+                    Html::beginForm(['/user/logout']) .
+                    Html::submitButton('Выход (' . Yii::$app->user->identity->login . ')', ['class' => 'btn']) .
+                    Html::endForm() .
+                    '</li>'
+                    ?>
 
-        <main>
-            <div class="container">
-                <?= $content ?>
-            </div>
-        </main>
+                <?php endif; ?>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-        <footer>
-            <div class="container">
-                ©5pda <?= date('Y') ?>
-            </div>
-        </footer>
+<main>
+    <div class="container">
+        <?= $content ?>
+    </div>
+</main>
 
-        <?php $this->endBody() ?>
-    </body>
+<footer>
+    <div class="container">
+        ©5pda <?= date('Y') ?>
+    </div>
+</footer>
+
+<?php $this->endBody() ?>
+</body>
 </html>
 <?php $this->endPage() ?>
