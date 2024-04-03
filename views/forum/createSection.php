@@ -10,23 +10,18 @@ use yii\widgets\ActiveForm;
     <div class="form__wrapper">
         <h1><?= $this->title ?></h1>
         <?php $form = ActiveForm::begin([
+            'class' => 'form',
             'fieldConfig' => [
                 'template' => "{label}\n{input}\n{error}",
                 'labelOptions' => ['class' => 'label'],
                 'inputOptions' => ['class' => 'input'],
                 'errorOptions' => ['class' => 'error']
             ]
-        ]); ?>
-        <div>
-            <?= $form->field($model, 'login')->textInput() ?>
-        </div>
-        <div>
-            <?= $form->field($model, 'password')->passwordInput() ?>
-        </div>
-        <div>
-            <?= $form->field($model, 'passwordRepeat')->passwordInput() ?>
-        </div>
-        <?= Html::submitButton('Регистрация', ['class' => 'btn']) ?>
-        <?php ActiveForm::end(); ?>
+        ]) ?>
+        <?= $form->field($model, 'title')->textInput() ?>
+        <?= $form->field($model, 'desc')->textarea(['value' => '', 'rows' => 10, 'cols' => 30, 'style' => 'resize:none;']) ?>
+        <?= Html::submitButton('Создать раздел', ['class' => 'btn']) ?>
+
+        <?php ActiveForm::end() ?>
     </div>
 </div>

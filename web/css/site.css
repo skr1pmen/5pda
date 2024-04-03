@@ -85,3 +85,29 @@ main {
     border-radius: 10px;
     box-shadow: -10px -10px 30px #fff, 10px 10px 30px #AEAEC066;
 }
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 8px;
+}
+
+.label {
+    font-size: 1em;
+}
+
+.input {
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 1.4em;
+    padding: 3px 5px;
+}
+
+.error {
+    color: red;
+    font-size: .8em;
+    margin-top: 4px;
+}

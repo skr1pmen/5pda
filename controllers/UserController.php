@@ -13,6 +13,7 @@ class UserController extends Controller
 {
     public function actionLogin()
     {
+        $this->view->title = 'Авторизация';
         if (!\Yii::$app->user->isGuest){
             return $this->goHome();
         }
