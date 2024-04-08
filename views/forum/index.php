@@ -11,9 +11,9 @@
 <div class="forum_sections">
     <?php if ($sections): ?>
         <?php foreach ($sections as $section): ?>
-            <a href="/forum/sebsections?id=<?= $section->id ?>" class="forum_section">
+            <a href="/forum/subsections?id=<?= $section->id ?>" class="forum_section">
                 <h3><?= $section->title ?></h3>
-                <span><?= $section->desc ?></span>
+                <span><?= $section->description ?></span>
             </a>
         <?php endforeach; ?>
     <?php else: ?>

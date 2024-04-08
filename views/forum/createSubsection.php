@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
         ]) ?>
         <?= $form->field($model, 'title')->textInput() ?>
         <?= $form->field($model, 'description')->textarea(['value' => '', 'rows' => 10, 'cols' => 30, 'style' => 'resize:none;']) ?>
-        <?= Html::submitButton('Создать раздел', ['class' => 'btn']) ?>
+        <?= Html::submitButton('Создать подраздел', ['class' => 'btn']) ?>
 
         <?php ActiveForm::end() ?>
     </div>

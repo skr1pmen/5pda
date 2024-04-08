@@ -111,3 +111,27 @@ main {
     font-size: .8em;
     margin-top: 4px;
 }
+
+.forum_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forum_sections {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.forum_section {
+    display: block;
+    width: 100%;
+    height: max-content;
+    color: #000;
+}
+
+.forum_section:hover {
+    background: #00000019;
+}

@@ -21,14 +21,39 @@ class ForumController extends Controller
     {
         $this->view->title = 'Создание раздела';
         $model = new SectionForm();
-        if ($model->load(Yii::$app->request->post() && $model->validate())) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             ForumRepository::createSection(
                 $model->title,
-                $model->desc
+                $model->description
             );
             return $this->goHome();
         }
         return $this->render("createSection", [
+            'model' => $model
+        ]);
+    }
+
+    public function actionSubsections()
+    {
+        $this->view->title = "Страница подразделов";
+        return $this->render("subsections", [
+            'subsections' => ForumRepository::getSubsections(Yii::$app->request->get('id'))
+        ]);
+    }
+
+    public function actionCreateSubsection()
+    {
+        $this->view->title = 'Создание подраздела';
+        $model = new SectionForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            ForumRepository::createSubsection(
+                $model->title,
+                $model->description,
+                Yii::$app->request->get('id')
+            );
+            return $this->goHome();
+        }
+        return $this->render("createSubsection", [
             'model' => $model
         ]);
     }

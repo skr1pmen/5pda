@@ -7,12 +7,12 @@ use yii\base\Model;
 class SectionForm extends Model
 {
     public $title;
-    public $desc;
+    public $description;
 
     public function rules()
     {
         return [
-            [['title', 'desc'], 'required']
+            [['title', 'description'], 'required']
         ];
     }
 
@@ -20,7 +20,7 @@ class SectionForm extends Model
     {
         return [
             'title' => 'Название',
-            'desc' => 'Описание'
+            'description' => 'Описание'
         ];
     }
 }
