@@ -26,7 +26,10 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
 <header>
     <div class="container">
-        <a href="/" class="logo">5pda</a>
+        <div class="logo_head">
+            <a href="/" class="logo">5pda</a>
+            <span><?= $this->title ?></span>
+        </div>
         <nav>
             <ul>
                 <li><a href="#">Случайная тема</a></li>

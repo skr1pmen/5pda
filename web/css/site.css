@@ -11,6 +11,18 @@ header, footer {
     padding: 10px 0;
 }
 
+.logo_head {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_head span {
+    padding-left: 10px;
+    border-left: 1px solid #fff;
+}
+
 a {
     text-decoration: none;
     color: #fff;
