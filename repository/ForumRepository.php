@@ -69,6 +69,11 @@ class ForumRepository
         return Topics::find()->where(['id' => $id])->one()->title;
     }
 
+    public static function getTopicsAuthor($id)
+    {
+        return Topics::find()->where(['id' => $id])->one()->user_id;
+    }
+
     public static function getMessages($id)
     {
         return Messages::find()->where(['topic_id' => $id])->all();

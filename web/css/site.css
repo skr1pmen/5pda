@@ -147,3 +147,41 @@ main {
 .forum_section:hover {
     background: #00000019;
 }
+
+.message__wrapper form {
+    width: 100%;
+    display: flex;
+}
+
+.message__wrapper textarea {
+    width: 100%;
+    min-height: 4.5em;
+    max-height: 10em;
+    display: block;
+    resize: vertical;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    color: #000;
+    flex: 1;
+}
+
+.message__wrapper label {
+    display: none;
+}
+
+.msgBtn {
+    margin-top: 8px;
+    height: 72px;
+    font-size: 20px;
+    width: 72px;
+    background: #d926a5;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.msgBtn:hover {
+    background: #a31c7c;
+}
