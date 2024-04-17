@@ -38,9 +38,12 @@ class ForumRepository
         return $subsection->id;
     }
 
-    public static function getTopics($id)
+    public static function getTopics($id = null)
     {
-        return Topics::find()->where(['subsection_id' => $id])->all();
+        if (!empty($id)) {
+            return Topics::find()->where(['subsection_id' => $id])->all();
+        }
+        return Topics::find()->all();
     }
 
     public static function createTopic($title, $desc, $subsection_id, $user_id)

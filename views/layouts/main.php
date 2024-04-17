@@ -32,7 +32,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         </div>
         <nav>
             <ul>
-                <li><a href="#">Случайная тема</a></li>
+                <li><a href="/forum/random-topic">Случайная тема</a></li>
                 <?php if (Yii::$app->user->isGuest): ?>
                     <li><a href="/user/login">Войти</a></li>
                     <li><a class="btn" href="/user/registration">Регистрация</a></li>

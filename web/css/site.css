@@ -185,3 +185,7 @@ main {
 .msgBtn:hover {
     background: #a31c7c;
 }
+
+.file input {
+    display: none;
+}
